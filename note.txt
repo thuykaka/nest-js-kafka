@@ -1,0 +1,9 @@
+để chạy req/res được cần:
+    + sub vào topic
+    + tạo client để send (req-res) / emit (publish event)
+
+Chung 1 groupId thì sẽ nhận dc tin nhắn từ 1 topic luân phiên, nếu khác thì sẽ nhận được như nhau
+
+Khi khởi tạo 1 microservice, ta cần truyền vào consumer -> groupId, lúc này nestjs sẽ tự thêm postfix -server vào tất cả groupId, ta sẽ coi cái groupId chính là tên service
+
+Luu ý nếu partitions < số lượng instances thì 1 số instances sẽ ko nhận dc req
